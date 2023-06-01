@@ -1,3 +1,15 @@
+/* 전체 선택자 */
+* {
+  color: inherit;
+}
+
+/* 가상 요소 선택자 */
+::selection {
+  background: #373e6a;
+  color: hotpink;
+}
+
+/* 태그 선택자 */
 body {
   font-family: "SUIT";
   font-weight: 300;
@@ -7,23 +19,60 @@ body {
   /* color: hsla(hue, saturation, lightness, alpha); */
 }
 
-* {
-  color: inherit;
-}
-
 /* 클래스 선택자 */
 .fancy {
   font-weight: bold;
   text-shadow: 4px 4px 3px #77f;
+  
+}
+
+.align {
+  text-align: center;
 }
 
 ul.menu{
 	margin: 0;
 	padding-left: 0;
-  color: #f00;
+  color: #0f0;
 }
 
 /* 아이디 선택자 */
 #demo {
   border: red 2px solid;
+}
+
+/* 속성 선택자 */
+.menu a[href$=".html"] {
+  background: blue;
+}
+
+/* 선택자 목록 */
+.fancy, .menu {
+  font-size: 24px;
+}
+
+/* 가상 요소 선택자 */
+.align::before {
+  content: "이전 요소";
+}
+
+.align::after { 
+  content: "다음 요소";
+}
+
+/* 가상 클래스 */
+.menu li:nth-child(odd),
+/* .menu li:nth-child(even), */
+/* .menu li:nth-child(-n + 2), */
+.menu li:nth-child(n + 7) {
+  color: yellow;
+}
+
+.menu a:hover {
+  border: 5px solid orange;
+}
+
+h1.menu:hover, 
+h1.menu:focus {
+  background-color: teal;
 }
